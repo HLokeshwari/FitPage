@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #f4f4f4;
+    --text: #333;
+    --card-bg: #ffffff;
+}
+
+.dark {
+    --background: #1f2937;
+    --text: #d1d5db;
+    --card-bg: #374151;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+#auth-section, #search-section {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#user-profile {
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+}
+
+#auth-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#auth-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    80% {
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    }
+}
+
+.highlight-positive {
+    border: 2px solid #22c55e;
+    animation: glow 1.5s infinite;
+}
